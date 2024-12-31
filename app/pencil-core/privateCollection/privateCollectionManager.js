@@ -165,7 +165,8 @@ PrivateCollectionManager.exportCollection = function (collection) {
             filters: [
                 { name: "Pencil Documents", extensions: ["zip"] }
             ]
-        }, function (filePath) {
+        }).then(function(res) {
+            var filePath = res.filePath;
             if (!filePath) return;
             ApplicationPane._instance.busy();
             var tempDir = tmp.dirSync({ keep: false, unsafeCleanup: true });
@@ -200,7 +201,8 @@ PrivateCollectionManager.importNewCollection = function () {
             { name: "Pencil Collection Archives (*.epc; *.zip)", extensions: ["zip", "epc"] }
         ]
 
-    }, function (filenames) {
+    }).then(function(res) {
+        var filenames = res.filePaths;
         if (!filenames || filenames.length <= 0) return;
         var file = {
             path: filenames[0],
