@@ -704,7 +704,8 @@ StencilCollectionBuilder.prototype.build = function () {
             title: "Select Output Directory",
             defaultPath: (currentOptions && currentOptions.outputPath && fs.existsSync(currentOptions.outputPath)) ? currentOptions.outputPath : os.homedir(),
             properties: ["openDirectory"]
-        }, function (filenames) {
+        }).then(function(res) {
+            var filenames = res.filePaths;
             if (!filenames || filenames.length <= 0) return;
             var selectedPath = filenames[0];
 
