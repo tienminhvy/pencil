@@ -12,10 +12,14 @@
     "copyright": "Copyright © 2008-2016 Evolus. All rights reserved.",
     "mac": {
       "category": "public.app-category.graphics-design",
-      "target": [{
-           "target": "dmg",
-           "arch": ["arm64"]
-      }]
+      "target": [
+        {
+          "target": "dmg",
+          "arch": [
+            "arm64"
+          ]
+        }
+      ]
     },
     "dmg": {
       "contents": [
@@ -87,6 +91,16 @@
   },
   "private": true,
   "dependencies": {
-    "@electron/remote": "^2.0.1"
+    "@electron/remote": "^2.0.1",
+    "adm-zip": "^0.5.16",
+    "archiver": "^7.0.1",
+    "jimp": "^1.6.0",
+    "less": "^4.2.1",
+    "moment": "^2.30.1",
+    "perfect-freehand": "^1.2.2",
+    "q": "^2.0.3",
+    "tar-fs": "^3.0.6",
+    "tar.gz": "^1.0.7",
+    "zip": "^1.2.0"
   }
 }
