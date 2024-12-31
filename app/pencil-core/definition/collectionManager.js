@@ -622,7 +622,9 @@ CollectionManager.selectDeveloperStencilDir = function () {
             { name: "Definition.xml", extensions: ["xml"] }
         ]
 
-    }, function (filenames) {
+    }).then(function(res) {
+        
+        var filenames = res.filePaths;
 
         ApplicationPane._instance.unbusy();
         if (!filenames || filenames.length <= 0) return;
